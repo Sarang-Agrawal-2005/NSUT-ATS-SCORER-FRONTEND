@@ -109,6 +109,24 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.removeChild(link);
         });
     }
+
+    // Resume Builder navigation
+    const buildResumeLinks = document.querySelectorAll('.nav-link');
+    buildResumeLinks.forEach(link => {
+        if (link.textContent.trim() === 'Build Resume') {
+            link.setAttribute('href', 'resume-builder.html');
+        }
+    });
+
+    // Build Resume button functionality
+    const buildResumeBtn = document.getElementById('buildResumeBtn');
+    if (buildResumeBtn) {
+        buildResumeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'resume-builder.html';
+        });
+    }
+
 });
 
 // Utility function to open URL in new tab
